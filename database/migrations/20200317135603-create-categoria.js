@@ -10,7 +10,7 @@ module.exports = {
             nome: {
                 allowNull: false,
                 type: DataTypes.STRING
-            }
+            },
         });
     },
     down: (queryInterface) => {
