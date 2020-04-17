@@ -1,40 +1,38 @@
 module.exports = {
     up: (queryInterface, DataTypes) => {
-        return queryInterface.createTable('Item', {
+        return queryInterface.createTable('MovimentoCaixa', {
             id: {
-                type: DataTypes.INTEGER,
                 primaryKey: true,
+                allowNull: false,
                 autoIncrement: true,
-                allowNull: false
-            },
-            idProduto: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-                references: {
-                    model: 'Produto',
-                    key: 'id'
-                }
-            },
-            idCompra: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-                references: {
-                    model: 'Compra',
-                    key: 'id'
-                }
-            },
-            quantidade: {
-                allowNull: false,
                 type: DataTypes.INTEGER
             },
-            valor: {
+            idCaixa: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
-                type: DataTypes.DECIMAL
+                references: {
+                    model: 'Caixa',
+                    key: 'id'
+                }
+            },
+            horaInicio: {
+                type: DataTypes.DATE
+            },
+            horaFim: {
+                type: DataTypes.DATE
+            },
+            idOperador: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'Operador',
+                    key: 'id'
+                }
             }
         });
     },
 
     down: (queryInterface) => {
-        return queryInterface.dropTable('Item');
+        return queryInterface.dropTable('MovimentoCaixa');
     }
 };

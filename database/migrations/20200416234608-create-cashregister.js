@@ -1,19 +1,20 @@
 module.exports = {
     up: (queryInterface, DataTypes) => {
-        return queryInterface.createTable('TipoPagamento', {
+        return queryInterface.createTable('Caixa', {
             id: {
+                primaryKey: true,
                 allowNull: false,
                 autoIncrement: true,
-                primaryKey: true,
-                type: DataTypes.INTEGER,
+                type: DataTypes.INTEGER
             },
-            nome: {
+            data: {
                 allowNull: false,
-                type: DataTypes.STRING
+                type: DataTypes.DATE
             }
         });
     },
+
     down: (queryInterface) => {
-        return queryInterface.dropTable('TipoPagamento');
+        return queryInterface.dropTable('Caixa');
     }
-}
+};

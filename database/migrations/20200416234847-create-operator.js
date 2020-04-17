@@ -1,11 +1,13 @@
+'use strict';
+
 module.exports = {
     up: (queryInterface, DataTypes) => {
-        return queryInterface.createTable('TipoPagamento', {
+        return queryInterface.createTable('Operador', {
             id: {
+                primaryKey: true,
                 allowNull: false,
                 autoIncrement: true,
-                primaryKey: true,
-                type: DataTypes.INTEGER,
+                type: DataTypes.INTEGER
             },
             nome: {
                 allowNull: false,
@@ -13,7 +15,8 @@ module.exports = {
             }
         });
     },
+
     down: (queryInterface) => {
-        return queryInterface.dropTable('TipoPagamento');
+        return queryInterface.dropTable('Operador');
     }
-}
+};

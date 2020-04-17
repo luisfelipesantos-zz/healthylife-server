@@ -1,5 +1,5 @@
 module.exports = {
-    up: (queryInterface, Sequelize) => {
+    up: (queryInterface, DataTypes) => {
         return queryInterface.createTable('Compra', {
             id: {
                 allowNull: false,
@@ -13,6 +13,18 @@ module.exports = {
             },
             valorDesconto: {
                 type: DataTypes.DECIMAL,
+                allowNull: false
+            },
+            idMovimentoCaixa: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'MovimentoCaixa',
+                    key: 'id'
+                }
+            },
+            dataHora: {
+                type: DateTypes.DATE,
                 allowNull: false
             }
         });

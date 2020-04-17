@@ -9,11 +9,11 @@ module.exports = {
                     key: 'id'
                 }
             },
-            idIndicacao: {
+            idContraIndicacao: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'ContraIndicacao',
+                    model: 'Contraindicacao',
                     key: 'id'
                 }
             }
