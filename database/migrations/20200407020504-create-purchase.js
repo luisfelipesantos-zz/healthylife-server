@@ -22,10 +22,6 @@ module.exports = {
                     model: 'MovimentoCaixa',
                     key: 'id'
                 }
-            },
-            dataHora: {
-                type: DateTypes.DATE,
-                allowNull: false
             }
         });
     },
