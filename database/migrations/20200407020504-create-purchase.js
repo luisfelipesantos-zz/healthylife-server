@@ -22,6 +22,10 @@ module.exports = {
                     model: 'MovimentoCaixa',
                     key: 'id'
                 }
+            },
+            dataHora: { //adicionado depois do migration de update
+                type: DateTypes.DATE,
+                allowNull: false 
             }
         });
     },

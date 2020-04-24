@@ -19,7 +19,7 @@ module.exports = {
                 type: DataTypes.TEXT
             },
             imagem: {
-                type: DataTypes.BLOB
+                type: DataTypes.STRING
             },
             idCategoria: {
                 type: DataTypes.INTEGER,
