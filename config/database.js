@@ -4,4 +4,7 @@ module.exports = {
     "database": "healthylife",
     "host": "localhost",
     "dialect": "mysql",
+    define: {
+        timestamps: false
+    }
 }
