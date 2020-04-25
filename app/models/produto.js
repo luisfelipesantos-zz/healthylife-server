@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         Produto.belongsTo(models.Categoria, {foreignKey: 'idCategoria', as: 'categoria'});
         Produto.hasMany(models.Item, {as: 'itens'});
         Produto.belongsToMany(models.Indicacao, {through: 'ProdutoHasIndicacao', foreignKey: 'idindicacao', as: 'indicacoes'});
-        Produto.belongsToMany(models.ContraIndicacao, {trhough: 'ProdutoHasContraIndicacao', foreignKey: 'idContraIndicacao', as: 'ContraIndicacoes'});
+        Produto.belongsToMany(models.ContraIndicacao, {through: 'ProdutoHasContraIndicacao', foreignKey: 'idContraIndicacao', as: 'ContraIndicacoes'});
     };
     return Produto;
 }

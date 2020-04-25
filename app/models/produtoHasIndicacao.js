@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         idIndicacao: DataTypes.INTEGER
     }, {});
 
-    Indicacao.associate = function(models){
+    ProdutoHasIndicacao.associate = function(models){
         ProdutoHasIndicacao.belongsTo(models.Produto, {foreignKey: 'idProduto'});
         ProdutoHasIndicacao.belongsTo(models.Indicacao, {foreignKey: 'idIndicacao'});
     }

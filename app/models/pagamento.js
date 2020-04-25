@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Pagamento.associate = function(models) {
-        Pagamento.belongsTo(models.idTipoPagamento, {foreignKey: 'idTipoPagamento', as: 'tipoPagamento'});
-        Pagamentos.belongsTo(models.Compra, {foreignKey: 'idCompra', as: 'compra'});
+        Pagamento.belongsTo(models.TipoPagamento, {foreignKey: 'idTipoPagamento', as: 'tipoPagamento'});
+        Pagamento.belongsTo(models.Compra, {foreignKey: 'idCompra', as: 'compra'});
     }
 
     return Pagamento;
