@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const ContraIndicacao = sequelize.define('ContraIndicacao', {
+    const ContraIndicacao = sequelize.define('Contraindicacao', {
         nome: DataTypes.STRING
     }, {});
 

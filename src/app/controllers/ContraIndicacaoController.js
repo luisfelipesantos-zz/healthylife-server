@@ -1,9 +1,9 @@
-const { ContraIndicacao } = require('../models');
+const { Contraindicacao } = require('../models');
 
 class ContraIndicacaoController {
    async index(req, res) {
         try {
-            const contraindicacoes = await ContraIndicacao.findAll();
+            const contraindicacoes = await Contraindicacao.findAll();
 
             return res.json(contraindicacoes);
         } catch (err) {
@@ -12,7 +12,7 @@ class ContraIndicacaoController {
     }
     async show(req, res) {
         try {
-            const contraindicacao = await ContraIndicacao.findByPk(req.params.id);
+            const contraindicacao = await Contraindicacao.findByPk(req.params.id);
 
             return res.json(contraindicacao);
         } catch (err) {
@@ -22,7 +22,7 @@ class ContraIndicacaoController {
 
     async store(req, res) {
         try {
-            const contraindicacao = await ContraIndicacao.create(req.body);
+            const contraindicacao = await Contraindicacao.create(req.body);
 
             return res.json(contraindicacao);
         } catch (err) {
@@ -32,7 +32,7 @@ class ContraIndicacaoController {
 
     async update(req, res) {
         try {
-            const contraindicacao = await ContraIndicacao.findByPk(req.params.id);
+            const contraindicacao = await Contraindicacao.findByPk(req.params.id);
 
             contraindicacao.update(req.body);
 
@@ -44,7 +44,7 @@ class ContraIndicacaoController {
 
     async destroy(req, res) {
         try {
-            const contraindicacao = await ContraIndicacao.findByPk(req.params.id);
+            const contraindicacao = await Contraindicacao.findByPk(req.params.id);
 
             contraindicacao.destroy();
 
