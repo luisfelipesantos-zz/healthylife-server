@@ -3,7 +3,7 @@ module.exports = {
         return queryInterface.addColumn(
             'Compra',
             'dataHora', {
-                type: DateTypes.DATE,
+                type: DataTypes.DATE,
                 allowNull: false            
             }
         );

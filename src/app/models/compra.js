@@ -3,13 +3,13 @@ module.exports = (sequelize, DataTypes) => {
         valorTotal: DataTypes.DECIMAL,
         valorDesconto: DataTypes.DECIMAL,
         dataHora: DataTypes.DATE,
-        idMovimentoCaixa: DataTypes.INTEGER
+        MovimentoCaixaId: DataTypes.INTEGER
     }, {});
 
     Compra.associate = function(models) {
-        Compra.belongsTo(models.MovimentoCaixa, {foreignKey: 'idMovimentoCaixa', as: 'movimentoCaixa'});
-        Compra.hasMany(models.Pagamento, {as: 'pagamentos'});
-        Compra.hasMany(models.Item, {as: 'itens'});
+        Compra.hasMany(models.Pagamento, { foreignKey: 'CompraId', as: 'pagamentos' });
+        Compra.belongsTo(models.MovimentoCaixa, { as: 'movimentoCaixa'});
+        Compra.hasMany(models.Item, { foreignKey: 'CompraId',as: 'itens'});
     }
     
     return Compra;

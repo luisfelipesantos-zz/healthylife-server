@@ -1,15 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
     const MovimentoCaixa = sequelize.define('MovimentoCaixa', {
-        idCaixa: DataTypes.INTEGER,
+        CaixaId: DataTypes.INTEGER,
         horaInicio: DataTypes.DATE,
         horaFim: DataTypes.DATE,
-        idOperador: DataTypes.INTEGER
+        OperadorId: DataTypes.INTEGER
     }, {});
 
     MovimentoCaixa.associate = function(models) {
-        MovimentoCaixa.belongsTo(models.Caixa, {foreignKey: 'idCaixa', as: 'caixa'});
-        MovimentoCaixa.belongsTo(models.Operador, {foreignKey: 'idOperador', as: 'operador'});
-        MovimentoCaixa.hasMany(models.Compra, {as: 'compras'});
+        MovimentoCaixa.belongsTo(models.Caixa, { as: 'caixa' });
+        MovimentoCaixa.belongsTo(models.Operador, { as: 'operador'});
+        MovimentoCaixa.hasMany(models.Compra, { foreignKey: 'MovimentoCaixaId', as: 'compras' });
     }
     return MovimentoCaixa;
 }

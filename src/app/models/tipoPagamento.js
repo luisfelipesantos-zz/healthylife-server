@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     TipoPagamento.associate = function(models) {
-        TipoPagamento.hasMany(models.Pagamento, {as: 'pagamentos'});
+        TipoPagamento.hasMany(models.Pagamento, { foreignKey: 'TipoPagamentoId', as: 'pagamentos'});
     }
 
     return TipoPagamento;

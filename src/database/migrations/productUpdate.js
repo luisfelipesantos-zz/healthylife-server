@@ -1,18 +1,18 @@
 module.exports = {
-    up: (queryInterface, DateTypes) => {
+    up: (queryInterface, DataTypes) => {
         return queryInterface.changeColumn(
             'Produto',
             'imagem', {
-                type: DateTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false            
             }
         );
     },
-    down: (queryInterface, Sequelize) => {
+    down: (queryInterface, DataTypes) => {
         return queryInterface.changeColumn(
             'Produto',
             'imagem', {
-                type: DateTypes.BLOB,
+                type: DataTypes.BLOB,
                 allowNull: false            
             }
         );

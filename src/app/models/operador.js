@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     Operador.associate = function(models) {
-        Operador.hasMany(models.MovimentoCaixa, {as: 'movimentoscaixa'});
+        Operador.hasMany(models.MovimentoCaixa, { foreignKey: 'OperadorId', as: 'movimentoscaixa' });
     }
 
     return Operador;

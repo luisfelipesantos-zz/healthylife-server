@@ -1,13 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
     const ProdutoHasIndicacao = sequelize.define('ProdutoHasIndicacao', {
-        idProduto: DataTypes.INTEGER,
-        idIndicacao: DataTypes.INTEGER
+        ProdutoId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'Produto',
+                key: 'id'
+            }
+        },
+        IndicacaoId: { 
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'Indicacao',
+                key: 'id'
+            }
+        }
     }, {});
-
-    ProdutoHasIndicacao.associate = function(models){
-        ProdutoHasIndicacao.belongsTo(models.Produto, {foreignKey: 'idProduto'});
-        ProdutoHasIndicacao.belongsTo(models.Indicacao, {foreignKey: 'idIndicacao'});
-    }
 
     return ProdutoHasIndicacao;
 }

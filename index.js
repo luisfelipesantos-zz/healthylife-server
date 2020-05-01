@@ -1,3 +1,3 @@
-const { Categoria } = require('./src/app/models');
+// const { Categoria } = require('./src/app/models');
 
-Categoria.create({nome: 'Suplemento'});
+// Categoria.create({nome: 'Suplemento'});

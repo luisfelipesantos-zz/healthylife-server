@@ -4,14 +4,14 @@ module.exports = (sequelize, DataTypes) => {
         preco: DataTypes.DECIMAL,
         descricao: DataTypes.STRING,
         imagem: DataTypes.STRING,
-        idCategoria: DataTypes.INTEGER
+        CategoriaId: DataTypes.INTEGER
     }, {});
 
     Produto.associate = function(models){
-        Produto.belongsTo(models.Categoria, {foreignKey: 'idCategoria', as: 'categoria'});
-        Produto.hasMany(models.Item, {as: 'itens'});
-        Produto.belongsToMany(models.Indicacao, {through: 'ProdutoHasIndicacao', foreignKey: 'idindicacao', as: 'indicacoes'});
-        Produto.belongsToMany(models.Contraindicacao, {through: 'ProdutoHasContraIndicacao', foreignKey: 'idContraIndicacao', as: 'ContraIndicacoes'});
+        Produto.hasMany(models.Item, {foreignKey: 'ProdutoId', as: 'itens'});
+        Produto.belongsTo(models.Categoria, { as: 'categoria' });
+        Produto.belongsToMany(models.Indicacao, {through: 'ProdutoHasIndicacao', foreignKey: 'IndicacaoId', as: 'indicacoes'});
+        Produto.belongsToMany(models.Contraindicacao, {through: 'ProdutoHasContraIndicacao', foreignKey: 'ContraindicacaoId', as: 'contraindicacoes'});
     };
     return Produto;
 }

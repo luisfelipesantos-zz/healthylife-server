@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     Indicacao.associate = function(models) {
-        Indicacao.belongsToMany(models.Produto, {through: 'ProdutoHasIndicacao', foreignKey: 'idProduto', as: 'produtos'});
+        Indicacao.belongsToMany(models.Produto, {through: 'ProdutoHasIndicacao', foreignKey: 'ProdutoId', as: 'produtos'});
     }
 
     return Indicacao;

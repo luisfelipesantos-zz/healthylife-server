@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     ContraIndicacao.associate = function(models) {
-        ContraIndicacao.belongsToMany(models.Produto, {through: 'ProdutoHasContraIndicacao', foreignKey: 'idContraIndicacao', as: 'produtos'});
+        ContraIndicacao.belongsToMany(models.Produto, {through: 'ProdutoHasContraIndicacao', foreignKey: 'ProdutoId', as: 'produtos'});
     }
 
     return ContraIndicacao;
