@@ -15,7 +15,7 @@ module.exports = {
                 type: DataTypes.DECIMAL,
                 allowNull: false
             },
-            idMovimentoCaixa: {
+            MovimentoCaixaId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
@@ -24,7 +24,7 @@ module.exports = {
                 }
             },
             dataHora: { //adicionado depois do migration de update
-                type: DateTypes.DATE,
+                type: DataTypes.DATE,
                 allowNull: false 
             }
         });

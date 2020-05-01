@@ -7,7 +7,7 @@ module.exports = {
                 autoIncrement: true,
                 allowNull: false
             },
-            idProduto: {
+            ProdutoId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
@@ -15,7 +15,7 @@ module.exports = {
                     key: 'id'
                 }
             },
-            idCompra: {
+            CompraId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {

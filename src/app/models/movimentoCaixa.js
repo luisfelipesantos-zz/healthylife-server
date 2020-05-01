@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     MovimentoCaixa.associate = function(models) {
-        MovimentoCaixa.belongsTo(models.Caixa, { as: 'caixa' });
-        MovimentoCaixa.belongsTo(models.Operador, { as: 'operador'});
+        MovimentoCaixa.belongsTo(models.Caixa, { as: 'Caixa' });
+        MovimentoCaixa.belongsTo(models.Operador, { as: 'Operador'});
         MovimentoCaixa.hasMany(models.Compra, { foreignKey: 'MovimentoCaixaId', as: 'compras' });
     }
     return MovimentoCaixa;

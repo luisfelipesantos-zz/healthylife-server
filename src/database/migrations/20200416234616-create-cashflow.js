@@ -7,7 +7,7 @@ module.exports = {
                 autoIncrement: true,
                 type: DataTypes.INTEGER
             },
-            idCaixa: {
+            CaixaId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
@@ -21,7 +21,7 @@ module.exports = {
             horaFim: {
                 type: DataTypes.DATE
             },
-            idOperador: {
+            OperadorId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {

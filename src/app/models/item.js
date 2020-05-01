@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Item.associate = function(models) {
-        Item.belongsTo(models.Compra, { as: 'compra' });
-        Item.belongsTo(models.Produto, { as: 'produto' });
+        Item.belongsTo(models.Compra, { as: 'Compra' });
+        Item.belongsTo(models.Produto, { as: 'Produto' });
     }
 
     return Item;

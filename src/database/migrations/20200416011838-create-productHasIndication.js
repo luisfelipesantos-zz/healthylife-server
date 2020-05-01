@@ -1,7 +1,7 @@
 module.exports = {
     up: (queryInterface, DataTypes) => {
         return queryInterface.createTable('ProdutoHasIndicacao', {
-            idProduto: {
+            ProdutoId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
@@ -9,7 +9,7 @@ module.exports = {
                     key: 'id'
                 }
             },
-            idIndicacao: {
+            IndicacaoId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {

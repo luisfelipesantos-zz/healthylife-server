@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Compra.associate = function(models) {
         Compra.hasMany(models.Pagamento, { foreignKey: 'CompraId', as: 'pagamentos' });
-        Compra.belongsTo(models.MovimentoCaixa, { as: 'movimentoCaixa'});
+        Compra.belongsTo(models.MovimentoCaixa, { as: 'MovimentoCaixa'});
         Compra.hasMany(models.Item, { foreignKey: 'CompraId',as: 'itens'});
     }
     

@@ -21,7 +21,7 @@ module.exports = {
             imagem: {
                 type: DataTypes.STRING
             },
-            idCategoria: {
+            CategoriaId: {
                 type: DataTypes.INTEGER,
                 references: {
                     model: 'Categoria',
