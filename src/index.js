@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-	return res.send('Hello World!'); 
+	return res.send('Sistema Vida Saudável - Em construção...'); 
 });
 
 app.use(routes);
