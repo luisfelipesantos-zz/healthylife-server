@@ -21,6 +21,7 @@ class ProdutoController {
     }
 
     async store(req, res) {
+        console.log('---------------------'+req.body);
         try {
             const produto = await Produto.create(req.body);
 
