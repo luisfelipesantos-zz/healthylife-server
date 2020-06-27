@@ -10,6 +10,7 @@ class CompraController {
             return res.status(400).json({ error: err.message });
         }
     }
+
     async show(req, res) {
         try {
             const compra = await Compra.findByPk(req.params.id);
@@ -41,6 +42,18 @@ class CompraController {
             return res.status(400).json({ error: err.message });
         }
      }
+
+    async getAllComprasFromCaixa(req, res) {
+        try {
+            const allCompras = await sequelize.query('select prod.id, prod.nome, it.quantidade, it.valor, mov.horaInicio, op.nome, caix.data FROM Produto as prod INNER JOIN Item as it on it.ProdutoId = prod.id INNER JOIN Compra as comp on it.CompraId = comp.id INNER JOIN MovimentoCaixa as mov on comp.MovimentoCaixaId = mov.id INNER JOIN Caixa as caix on mov.CaixaId = caix.id INNER JOIN Operador as op on mov.OperadorId = op.id where caix.id = ?;', {
+                replacements: [req.params.idCaixa],
+                type: sequelize.QueryTypes.SELECT
+            });
+            return res.json(allCompras);
+        } catch (err) {
+            return res.status(400).json({ error: err.message });
+        }
+    }
 
     async destroy(req, res) {
         try {

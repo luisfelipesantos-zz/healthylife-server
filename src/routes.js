@@ -36,6 +36,7 @@ routes.get('/compras/:id', CompraController.show);
 routes.post('/compras', CompraController.store);
 routes.put('/compras/:id', CompraController.update);
 routes.delete('/compras/:id', CompraController.destroy);
+routes.delete('/compras/:idCaixa', CompraController.getAllComprasFromCaixa);
 
 //Rotas ContraIndicacao
 routes.get('/contraindicacoes', ContraIndicacaoController.index);
