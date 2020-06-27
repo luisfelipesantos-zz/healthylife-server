@@ -1,4 +1,8 @@
 const { Compra } = require('../models');
+const Sequelize = require('sequelize');
+const config = require('../../config/database.js');
+
+const sequelize = new Sequelize(config);
 
 class CompraController {
    async index(req, res) {
