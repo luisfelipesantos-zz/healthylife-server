@@ -71,8 +71,3 @@ class CompraController {
         }
      }
 }
-
-module.exports = new CompraController();
-select comp.id as 'compid', comp.valorTotal, comp.valorDesconto, caix.id as 'caixaid', mov.id as 'movid', mov.horaInicio, op.nome from Compra comp INNER JOIN MovimentoCaixa mov on comp.MovimentoCaixaId = mov.id INNER JOIN Caixa caix on mov.CaixaId = caix.id INNER JOIN Operador op on mov.OperadorId = op.id where caix.id = 11 order by mov.id;
-
-            select item.quantidade, item.valor, prod.id, prod.nome from Item item INNER JOIN Produto prod on item.ProdutoId = prod.id  where CompraId = 56;
