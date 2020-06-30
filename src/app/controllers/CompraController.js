@@ -71,3 +71,5 @@ class CompraController {
         }
      }
 }
+
+module.exports = new CompraController();
