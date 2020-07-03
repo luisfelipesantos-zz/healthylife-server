@@ -50,7 +50,7 @@ class CompraController {
   async getAllComprasFromCaixa(req, res) {
     try {
       const allCompras = await sequelize.query(
-        "select comp.id as 'compid', comp.valorTotal, comp.valorDesconto, caix.id as 'caixaid', mov.id as 'movid', mov.horaInicio, op.nome as 'opnome', item.quantidade, item.valor, prod.id, prod.nome, from Compra comp INNER JOIN MovimentoCaixa mov on comp.MovimentoCaixaId = mov.id INNER JOIN Caixa caix on mov.CaixaId = caix.id INNER JOIN Operador op on mov.OperadorId = op.id INNER JOIN Item item on item.CompraId = comp.id INNER JOIN Produto prod on item.ProdutoId = prod.id where caix.id = ? order by mov.id, comp.id;",
+        "select comp.id as 'compid', comp.valorTotal, comp.valorDesconto, caix.id as 'caixaid', mov.id as 'movid', mov.horaInicio, op.nome as 'opnome', item.quantidade, item.valor, prod.id, prod.nome from Compra comp INNER JOIN MovimentoCaixa mov on comp.MovimentoCaixaId = mov.id INNER JOIN Caixa caix on mov.CaixaId = caix.id INNER JOIN Operador op on mov.OperadorId = op.id INNER JOIN Item item on item.CompraId = comp.id INNER JOIN Produto prod on item.ProdutoId = prod.id where caix.id = ? order by mov.id, comp.id;",
         {
           replacements: [req.params.idCaixa],
           type: sequelize.QueryTypes.SELECT,
