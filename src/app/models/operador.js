@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Operador = sequelize.define('Operador', {
-        nome: DataTypes.STRING
+        nome: DataTypes.STRING,
+        senha: DataTypes.STRING
     }, {});
 
     Operador.associate = function(models) {
