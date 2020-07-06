@@ -12,7 +12,7 @@ module.exports = {
                 type: DataTypes.STRING
             },            
             preco: {
-                type: DataTypes.DECIMAL,
+                type: DataTypes.DECIMAL(10, 2),
                 allowNull: false
             },
             descricao: {

@@ -29,7 +29,7 @@ module.exports = {
             },
             valor: {
                 allowNull: false,
-                type: DataTypes.DECIMAL
+                type: DataTypes.DECIMAL(10, 2)
             }
         });
     },

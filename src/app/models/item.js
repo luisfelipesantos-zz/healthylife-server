@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         ProdutoId: DataTypes.INTEGER,
         CompraId: DataTypes.INTEGER,
         quantidade: DataTypes.INTEGER,
-        valor: DataTypes.DECIMAL
+        valor: DataTypes.DECIMAL(10, 2)
     });
 
     Item.associate = function(models) {

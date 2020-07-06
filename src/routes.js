@@ -16,6 +16,10 @@ const TipoPagamentoController = require('./app/controllers/TipoPagamentoControll
 
 const routes = Router();
 
+
+routes.get('/', (req, res) => {
+	return res.send('Sistema Vida Saudável - Em construção...'); 
+});
 //Rotas Caixa
 routes.get('/caixas', CaixaController.index);
 routes.get('/caixas/:id', CaixaController.show);

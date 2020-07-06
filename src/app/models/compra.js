@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Compra = sequelize.define('Compra', {
-        valorTotal: DataTypes.DECIMAL,
+        valorTotal: DataTypes.DECIMAL(10, 2),
         valorDesconto: DataTypes.DECIMAL,
         dataHora: DataTypes.DATE,
         MovimentoCaixaId: DataTypes.INTEGER
